@@ -43,6 +43,9 @@ class MeetingService {
           'tile-view.enabled': true,
           'toolbox.enabled': true,
           'filmstrip.enabled': true,
+          'lobby-mode.enabled': false, // Disable lobby mode
+          'meeting-password.enabled': false, // Disable password
+          'security.enabled': false, // Disable security options
         },
         userInfo: JitsiMeetUserInfo(
           displayName: displayName,
@@ -51,6 +54,7 @@ class MeetingService {
         ),
       );
 
+      // Join the meeting
       await _jitsiMeet.join(options);
       debugPrint('Successfully joined meeting as regular user');
     } catch (e) {
@@ -70,18 +74,26 @@ class MeetingService {
       debugPrint('Joining meeting with Google auth: $meetingId');
       final domain = PreferencesService.getJitsiDomain() ?? 'meet.jit.si';
 
+      // Get Google authentication token
+      final googleAuth = await googleUser.authentication;
+      final token = googleAuth.accessToken;
+
+      debugPrint('Google access token: $token');
+
       // Use Jitsi's built-in Google authentication
       final options = JitsiMeetConferenceOptions(
         serverURL: 'https://$domain',
         room: meetingId,
-        token: await googleUser.authentication.then((auth) => auth.accessToken),
+        token: token,
         configOverrides: {
           'startWithAudioMuted': audioMuted,
           'startWithVideoMuted': videoMuted,
           'prejoinPageEnabled': false,
           'disableDeepLinking': true,
-          // Enable Google authentication
-          'googleApiApplicationClientID': '39065779381-rfl8k52eab7i7flkfcg29ql4uiv0j0kc.apps.googleusercontent.com',
+          'startWithVideoMuted': false,
+          'startWithAudioMuted': false,
+          'subject': 'Meeting created by ${googleUser.displayName}',
+          'enableClosePage': true,
         },
         featureFlags: {
           'pip.enabled': true,
@@ -91,11 +103,18 @@ class MeetingService {
           'live-streaming.enabled': true,
           'raise-hand.enabled': true,
           'overflow-menu.enabled': true,
-          'meeting-password.enabled': true,
+          'meeting-password.enabled': false,
           'kick-out.enabled': true,
-          'lobby-mode.enabled': true,
-          // Enable Google authentication
+          'lobby-mode.enabled': false,
+          'security.enabled': false,
           'google-auth.enabled': true,
+          'calendar.enabled': false,
+          'call-integration.enabled': false,
+          'close-captions.enabled': false,
+          'help.enabled': false,
+          'ios.recording.enabled': false,
+          'android.recording.enabled': false,
+          'moderator.enabled': true,
         },
         userInfo: JitsiMeetUserInfo(
           displayName: googleUser.displayName ?? 'Google User',
@@ -165,6 +184,10 @@ class MeetingService {
           'startWithAudioMuted': audioMuted,
           'startWithVideoMuted': videoMuted,
           'prejoinPageEnabled': false,
+          'startWithVideoMuted': false,
+          'startWithAudioMuted': false,
+          'subject': 'Meeting Room',
+          'enableClosePage': true,
         },
         featureFlags: {
           'pip.enabled': true,
@@ -173,18 +196,17 @@ class MeetingService {
           'recording.enabled': true,
           'live-streaming.enabled': true,
           'raise-hand.enabled': true,
-          // Enable Google authentication
           'google-auth.enabled': true,
-        },
-      );
-
-      // Set up event listeners
-      _jitsiMeet.eventListener = JitsiMeetEventListener(
-        conferenceJoined: (url) {
-          debugPrint('Conference joined: $url');
-        },
-        conferenceTerminated: (url, error) {
-          debugPrint('Conference terminated: $url, error: $error');
+          'calendar.enabled': false,
+          'call-integration.enabled': false,
+          'close-captions.enabled': false,
+          'help.enabled': false,
+          'ios.recording.enabled': false,
+          'android.recording.enabled': false,
+          'lobby-mode.enabled': false,
+          'meeting-password.enabled': false,
+          'security.enabled': false,
+          'moderator.enabled': true,
         },
       );
 

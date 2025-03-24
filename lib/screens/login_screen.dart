@@ -41,8 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
-  // Login with Jitsi's built-in Google authentication
-  Future<void> _loginWithJitsiGoogleAuth() async {
+  // Login with Google directly
+  Future<void> _loginWithGoogle() async {
     if (_domainController.text.trim().isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -59,27 +59,17 @@ class _LoginScreenState extends State<LoginScreen> {
 
     try {
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
-      final meetingProvider = Provider.of<MeetingProvider>(context, listen: false);
 
       // Save domain
       final domain = _domainController.text.trim();
       await PreferencesService.setJitsiDomain(domain);
       await PreferencesService.setSavedDomain(domain);
 
-      // Create a temporary meeting ID for authentication
-      final tempMeetingId = 'auth_${DateTime.now().millisecondsSinceEpoch}';
-
-      // Join with Jitsi's built-in Google authentication
-      debugPrint('Authenticating with Jitsi Google Auth using domain: $domain');
-      final success = await meetingProvider.joinMeetingWithJitsiGoogleAuth(
-        meetingId: tempMeetingId,
-      );
+      // Login with Google
+      final success = await authProvider.loginWithGoogle(domain: domain);
 
       if (success) {
-        debugPrint('Successfully authenticated with Jitsi Google Auth');
-
-        // Set user as admin
-        await authProvider.setAdmin(true);
+        debugPrint('Successfully logged in with Google');
 
         if (!mounted) return;
 
@@ -96,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
           MaterialPageRoute(builder: (_) => const HomeScreen()),
         );
       } else {
-        debugPrint('Failed to authenticate with Jitsi Google Auth');
+        debugPrint('Failed to log in with Google');
         if (!mounted) return;
 
         ScaffoldMessenger.of(context).showSnackBar(
@@ -107,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
         );
       }
     } catch (e) {
-      debugPrint('Error during Jitsi Google Auth: $e');
+      debugPrint('Error during Google login: $e');
       if (!mounted) return;
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -191,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   // Google Sign In button
                   ElevatedButton.icon(
-                    onPressed: _isLoading ? null : _loginWithJitsiGoogleAuth,
+                    onPressed: _isLoading ? null : _loginWithGoogle,
                     icon: _isLoading
                         ? const SizedBox(
                       width: 20,

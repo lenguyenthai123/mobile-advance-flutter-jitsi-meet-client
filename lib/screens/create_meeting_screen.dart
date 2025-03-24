@@ -68,6 +68,62 @@ class _CreateMeetingScreenState extends State<CreateMeetingScreen> {
     );
   }
 
+  // Create and join with Google authentication
+  Future<void> _createAndJoinWithGoogle() async {
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
+
+    setState(() {
+      _isJoiningWithGoogle = true;
+    });
+
+    try {
+      final meetingProvider = Provider.of<MeetingProvider>(context, listen: false);
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+
+      if (authProvider.googleUser == null) {
+        throw Exception('Bạn cần đăng nhập với Google trước');
+      }
+
+      // Create the meeting first
+      debugPrint('Creating meeting with title: ${_titleController.text}');
+      final meeting = await meetingProvider.createMeeting(
+        title: _titleController.text,
+        description: _descriptionController.text,
+        scheduledTime: _getScheduledDateTime(),
+      );
+
+      debugPrint('Meeting created successfully with ID: ${meeting.meetingId}');
+
+      if (!mounted) return;
+
+      // Join with Google authentication
+      debugPrint('Joining meeting with Google auth');
+      await meetingProvider.joinMeetingWithGoogle(
+        meetingId: meeting.meetingId,
+        googleUser: authProvider.googleUser!,
+      );
+
+      debugPrint('Successfully joined meeting with Google auth');
+      if (!mounted) return;
+      Navigator.pop(context);
+    } catch (e) {
+      debugPrint('Error in create and join with Google: $e');
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Lỗi: $e')),
+      );
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isJoiningWithGoogle = false;
+        });
+      }
+    }
+  }
+
   // Create a regular meeting
   Future<void> _createMeeting() async {
     if (!_formKey.currentState!.validate()) {
@@ -169,70 +225,10 @@ class _CreateMeetingScreenState extends State<CreateMeetingScreen> {
     }
   }
 
-  // Create and join with Jitsi's built-in Google authentication
-  Future<void> _createAndJoinWithJitsiGoogleAuth() async {
-    if (!_formKey.currentState!.validate()) {
-      return;
-    }
-
-    setState(() {
-      _isJoiningWithGoogle = true;
-    });
-
-    try {
-      final meetingProvider = Provider.of<MeetingProvider>(context, listen: false);
-
-      // Create the meeting first
-      debugPrint('Creating meeting with title: ${_titleController.text}');
-      final meeting = await meetingProvider.createMeeting(
-        title: _titleController.text,
-        description: _descriptionController.text,
-        scheduledTime: _getScheduledDateTime(),
-      );
-
-      debugPrint('Meeting created successfully with ID: ${meeting.meetingId}');
-
-      if (!mounted) return;
-
-      // Join with Jitsi's built-in Google authentication
-      debugPrint('Joining meeting with Jitsi Google Auth');
-      final success = await meetingProvider.joinMeetingWithJitsiGoogleAuth(
-        meetingId: meeting.meetingId,
-      );
-
-      if (success) {
-        debugPrint('Successfully initiated Jitsi with Google Auth');
-        if (!mounted) return;
-        Navigator.pop(context);
-      } else {
-        debugPrint('Failed to join with Jitsi Google Auth');
-        if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Không thể tham gia cuộc họp với Google. Vui lòng thử lại.'),
-            backgroundColor: Colors.red,
-          ),
-        );
-      }
-    } catch (e) {
-      debugPrint('Error in create and join with Jitsi Google Auth: $e');
-      if (!mounted) return;
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Lỗi: $e')),
-      );
-    } finally {
-      if (mounted) {
-        setState(() {
-          _isJoiningWithGoogle = false;
-        });
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final authProvider = Provider.of<AuthProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -327,33 +323,34 @@ class _CreateMeetingScreenState extends State<CreateMeetingScreen> {
 
             const SizedBox(height: 16),
 
-            // Create and join with Jitsi Google Auth button
-            ElevatedButton.icon(
-              onPressed: _isCreatingMeeting || _isJoiningWithGoogle
-                  ? null
-                  : _createAndJoinWithJitsiGoogleAuth,
-              icon: _isJoiningWithGoogle
-                  ? const SizedBox(
-                width: 20,
-                height: 20,
-                child: CircularProgressIndicator(
-                  strokeWidth: 2,
-                  color: Colors.white,
+            // Create and join with Google button (only show if user is logged in with Google)
+            if (authProvider.googleUser != null)
+              ElevatedButton.icon(
+                onPressed: _isCreatingMeeting || _isJoiningWithGoogle
+                    ? null
+                    : _createAndJoinWithGoogle,
+                icon: _isJoiningWithGoogle
+                    ? const SizedBox(
+                  width: 20,
+                  height: 20,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    color: Colors.white,
+                  ),
+                )
+                    : Image.asset(
+                  'assets/images/google_logo.png',
+                  height: 24,
+                  width: 24,
+                  errorBuilder: (context, error, stackTrace) => const Icon(Icons.g_mobiledata),
                 ),
-              )
-                  : Image.asset(
-                'assets/images/google_logo.png',
-                height: 24,
-                width: 24,
-                errorBuilder: (context, error, stackTrace) => const Icon(Icons.g_mobiledata),
+                label: _isJoiningWithGoogle
+                    ? const Text('Đang kết nối với Google...')
+                    : const Text('Tạo & tham gia với Google'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: theme.colorScheme.secondary,
+                ),
               ),
-              label: _isJoiningWithGoogle
-                  ? const Text('Đang kết nối với Google...')
-                  : const Text('Tạo & tham gia với Google'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: theme.colorScheme.secondary,
-              ),
-            ),
           ],
         ),
       ),

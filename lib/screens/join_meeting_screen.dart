@@ -56,9 +56,15 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
       final meetingProvider = Provider.of<MeetingProvider>(context, listen: false);
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
 
-      if (_joinAsAdmin) {
-        // Join with Jitsi's built-in Google authentication
-        await _joinMeetingWithJitsiGoogleAuth();
+      if (_joinAsAdmin && authProvider.googleUser != null) {
+        // Join with Google authentication
+        debugPrint('Joining meeting as admin with Google: ${_meetingIdController.text.trim()}');
+        await meetingProvider.joinMeetingWithGoogle(
+          meetingId: _meetingIdController.text.trim(),
+          googleUser: authProvider.googleUser!,
+          audioMuted: _audioMuted,
+          videoMuted: _videoMuted,
+        );
       } else {
         // Regular join
         debugPrint('Joining meeting as regular user: ${_meetingIdController.text.trim()}');
@@ -70,17 +76,17 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
           audioMuted: _audioMuted,
           videoMuted: _videoMuted,
         );
-
-        // Update user name if different
-        if (authProvider.userName != _displayNameController.text.trim()) {
-          await authProvider.updateProfile(
-            name: _displayNameController.text.trim(),
-          );
-        }
-
-        if (!mounted) return;
-        Navigator.pop(context);
       }
+
+      // Update user name if different
+      if (authProvider.userName != _displayNameController.text.trim()) {
+        await authProvider.updateProfile(
+          name: _displayNameController.text.trim(),
+        );
+      }
+
+      if (!mounted) return;
+      Navigator.pop(context);
     } catch (e) {
       debugPrint('Error joining meeting: $e');
       if (!mounted) return;
@@ -92,54 +98,7 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
       if (mounted) {
         setState(() {
           _isJoining = false;
-        });
-      }
-    }
-  }
-
-  // Join with Jitsi's built-in Google authentication
-  Future<void> _joinMeetingWithJitsiGoogleAuth() async {
-    setState(() {
-      _isJoiningWithGoogle = true;
-    });
-
-    try {
-      final meetingProvider = Provider.of<MeetingProvider>(context, listen: false);
-
-      // Join with Jitsi's built-in Google authentication
-      debugPrint('Joining meeting with Jitsi Google Auth: ${_meetingIdController.text.trim()}');
-      final success = await meetingProvider.joinMeetingWithJitsiGoogleAuth(
-        meetingId: _meetingIdController.text.trim(),
-        audioMuted: _audioMuted,
-        videoMuted: _videoMuted,
-      );
-
-      if (success) {
-        debugPrint('Successfully initiated Jitsi with Google Auth');
-        if (!mounted) return;
-        Navigator.pop(context);
-      } else {
-        debugPrint('Failed to join with Jitsi Google Auth');
-        if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Không thể tham gia cuộc họp với Google. Vui lòng thử lại.'),
-            backgroundColor: Colors.red,
-          ),
-        );
-      }
-    } catch (e) {
-      debugPrint('Error joining meeting with Jitsi Google Auth: $e');
-      if (!mounted) return;
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Lỗi: $e')),
-      );
-    } finally {
-      if (mounted) {
-        setState(() {
           _isJoiningWithGoogle = false;
-          _isJoining = false;
         });
       }
     }
@@ -148,6 +107,7 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final authProvider = Provider.of<AuthProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -236,17 +196,18 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
               },
             ),
 
-            // Join as admin
-            SwitchListTile(
-              title: const Text('Tham gia với quyền quản trị'),
-              subtitle: const Text('Sử dụng xác thực Google của Jitsi'),
-              value: _joinAsAdmin,
-              onChanged: (value) {
-                setState(() {
-                  _joinAsAdmin = value;
-                });
-              },
-            ),
+            // Join as admin (only show if user is logged in with Google)
+            if (authProvider.googleUser != null)
+              SwitchListTile(
+                title: const Text('Tham gia với quyền quản trị'),
+                subtitle: const Text('Sử dụng tài khoản Google của bạn'),
+                value: _joinAsAdmin,
+                onChanged: (value) {
+                  setState(() {
+                    _joinAsAdmin = value;
+                  });
+                },
+              ),
 
             const SizedBox(height: 32),
 
@@ -269,7 +230,9 @@ class _JoinMeetingScreenState extends State<JoinMeetingScreen> {
                   Text('Đang tham gia...'),
                 ],
               )
-                  : Text(_joinAsAdmin ? 'Tham gia với Google' : 'Tham gia cuộc họp'),
+                  : Text(_joinAsAdmin && authProvider.googleUser != null
+                  ? 'Tham gia với quyền quản trị'
+                  : 'Tham gia cuộc họp'),
             ),
           ],
         ),
