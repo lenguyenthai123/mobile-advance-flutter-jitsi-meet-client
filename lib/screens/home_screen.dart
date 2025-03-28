@@ -262,10 +262,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       meeting: meeting,
                       onJoin: () async {
                         try {
-                          if (authProvider.isAdmin) {
-                            // Use Jitsi's built-in Google authentication
-                            await meetingProvider.joinMeetingWithJitsiGoogleAuth(
+                          if (authProvider.googleUser != null) {
+                            // Join with Google authentication
+                            await meetingProvider.joinMeetingWithGoogle(
                               meetingId: meeting.meetingId,
+                              googleUser: authProvider.googleUser!,
                             );
                           } else {
                             // Join as regular user

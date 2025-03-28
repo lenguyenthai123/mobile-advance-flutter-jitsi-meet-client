@@ -34,6 +34,26 @@ class MeetingService {
           'startWithAudioMuted': audioMuted,
           'startWithVideoMuted': videoMuted,
           'prejoinPageEnabled': false,
+          'disableDeepLinking': true,
+          'startAudioOnly': false,
+          'startWithVideoMuted': videoMuted,
+          'startWithAudioMuted': audioMuted,
+          'subject': 'Meeting Room',
+          'enableClosePage': true,
+          'disableInviteFunctions': false,
+          'requireDisplayName': false,
+          'enableWelcomePage': false,
+          'defaultLanguage': 'vi',
+          // Disable waiting room/lobby
+          'enableLobbyChat': false,
+          'enableNoAudioDetection': false,
+          'enableNoisyMicDetection': false,
+          'startSilent': false,
+          'enableInsecureRoomNameWarning': false,
+          'startAsModerator': true,
+          'prejoinConfig': {
+            'enabled': false,
+          },
         },
         featureFlags: {
           'pip.enabled': true,
@@ -43,9 +63,19 @@ class MeetingService {
           'tile-view.enabled': true,
           'toolbox.enabled': true,
           'filmstrip.enabled': true,
-          'lobby-mode.enabled': false, // Disable lobby mode
-          'meeting-password.enabled': false, // Disable password
-          'security.enabled': false, // Disable security options
+          'lobby-mode.enabled': false,
+          'meeting-password.enabled': false,
+          'security.enabled': false,
+          'kick-out.enabled': false,
+          'video-share.enabled': true,
+          'call-integration.enabled': false,
+          'calendar.enabled': false,
+          'recording.enabled': false,
+          'live-streaming.enabled': false,
+          'overflow-menu.enabled': true,
+          'prejoinpage.enabled': false,
+          // Make everyone a moderator
+          'moderator.enabled': true,
         },
         userInfo: JitsiMeetUserInfo(
           displayName: displayName,
@@ -90,21 +120,36 @@ class MeetingService {
           'startWithVideoMuted': videoMuted,
           'prejoinPageEnabled': false,
           'disableDeepLinking': true,
-          'startWithVideoMuted': false,
-          'startWithAudioMuted': false,
+          'startAudioOnly': false,
+          'startWithVideoMuted': videoMuted,
+          'startWithAudioMuted': audioMuted,
           'subject': 'Meeting created by ${googleUser.displayName}',
           'enableClosePage': true,
+          'disableInviteFunctions': false,
+          'requireDisplayName': false,
+          'enableWelcomePage': false,
+          'defaultLanguage': 'vi',
+          // Disable waiting room/lobby
+          'enableLobbyChat': false,
+          'enableNoAudioDetection': false,
+          'enableNoisyMicDetection': false,
+          'startSilent': false,
+          'enableInsecureRoomNameWarning': false,
+          'startAsModerator': true,
+          'prejoinConfig': {
+            'enabled': false,
+          },
         },
         featureFlags: {
           'pip.enabled': true,
           'chat.enabled': true,
           'invite.enabled': true,
-          'recording.enabled': true,
-          'live-streaming.enabled': true,
+          'recording.enabled': false,
+          'live-streaming.enabled': false,
           'raise-hand.enabled': true,
           'overflow-menu.enabled': true,
           'meeting-password.enabled': false,
-          'kick-out.enabled': true,
+          'kick-out.enabled': false,
           'lobby-mode.enabled': false,
           'security.enabled': false,
           'google-auth.enabled': true,
@@ -115,6 +160,7 @@ class MeetingService {
           'ios.recording.enabled': false,
           'android.recording.enabled': false,
           'moderator.enabled': true,
+          'prejoinpage.enabled': false,
         },
         userInfo: JitsiMeetUserInfo(
           displayName: googleUser.displayName ?? 'Google User',
@@ -152,7 +198,7 @@ class MeetingService {
         ..createdAt = DateTime.now()
         ..passwordProtected = isPasswordProtected
         ..password = password
-        ..waitingRoomEnabled = waitingRoomEnabled
+        ..waitingRoomEnabled = false // Always disable waiting room
         ..recordingEnabled = recordingEnabled;
 
       final id = await DatabaseService.saveMeeting(meeting);
@@ -184,17 +230,33 @@ class MeetingService {
           'startWithAudioMuted': audioMuted,
           'startWithVideoMuted': videoMuted,
           'prejoinPageEnabled': false,
-          'startWithVideoMuted': false,
-          'startWithAudioMuted': false,
+          'disableDeepLinking': true,
+          'startAudioOnly': false,
+          'startWithVideoMuted': videoMuted,
+          'startWithAudioMuted': audioMuted,
           'subject': 'Meeting Room',
           'enableClosePage': true,
+          'disableInviteFunctions': false,
+          'requireDisplayName': false,
+          'enableWelcomePage': false,
+          'defaultLanguage': 'vi',
+          // Disable waiting room/lobby
+          'enableLobbyChat': false,
+          'enableNoAudioDetection': false,
+          'enableNoisyMicDetection': false,
+          'startSilent': false,
+          'enableInsecureRoomNameWarning': false,
+          'startAsModerator': true,
+          'prejoinConfig': {
+            'enabled': false,
+          },
         },
         featureFlags: {
           'pip.enabled': true,
           'chat.enabled': true,
           'invite.enabled': true,
-          'recording.enabled': true,
-          'live-streaming.enabled': true,
+          'recording.enabled': false,
+          'live-streaming.enabled': false,
           'raise-hand.enabled': true,
           'google-auth.enabled': true,
           'calendar.enabled': false,
@@ -207,7 +269,11 @@ class MeetingService {
           'meeting-password.enabled': false,
           'security.enabled': false,
           'moderator.enabled': true,
+          'prejoinpage.enabled': false,
         },
+        userInfo: JitsiMeetUserInfo(
+          // Set as moderator
+        ),
       );
 
       await _jitsiMeet.join(options);

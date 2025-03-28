@@ -49,7 +49,7 @@ class MeetingProvider extends ChangeNotifier {
         scheduledTime: scheduledTime,
         isPasswordProtected: isPasswordProtected,
         password: password,
-        waitingRoomEnabled: waitingRoomEnabled,
+        waitingRoomEnabled: false, // Always disable waiting room
         recordingEnabled: recordingEnabled,
       );
 
@@ -94,7 +94,8 @@ class MeetingProvider extends ChangeNotifier {
           ..meetingId = meetingId
           ..title = 'Joined Meeting'
           ..startTime = DateTime.now()
-          ..createdAt = DateTime.now();
+          ..createdAt = DateTime.now()
+          ..waitingRoomEnabled = false; // Disable waiting room
 
         await DatabaseService.saveMeeting(newMeeting);
         _currentMeeting = newMeeting;
@@ -135,7 +136,8 @@ class MeetingProvider extends ChangeNotifier {
           ..meetingId = meetingId
           ..title = 'Google Meeting'
           ..startTime = DateTime.now()
-          ..createdAt = DateTime.now();
+          ..createdAt = DateTime.now()
+          ..waitingRoomEnabled = false; // Disable waiting room
 
         await DatabaseService.saveMeeting(newMeeting);
         _currentMeeting = newMeeting;
@@ -175,7 +177,8 @@ class MeetingProvider extends ChangeNotifier {
             ..meetingId = meetingId
             ..title = 'Jitsi Google Meeting'
             ..startTime = DateTime.now()
-            ..createdAt = DateTime.now();
+            ..createdAt = DateTime.now()
+            ..waitingRoomEnabled = false; // Disable waiting room
 
           await DatabaseService.saveMeeting(newMeeting);
           _currentMeeting = newMeeting;
