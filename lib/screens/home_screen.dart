@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Near'),
+        title: const Text('Mobile-Seminar'),
         actions: [
           if (authProvider.isAdmin)
             IconButton(

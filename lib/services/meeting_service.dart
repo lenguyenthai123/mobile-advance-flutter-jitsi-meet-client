@@ -51,9 +51,7 @@ class MeetingService {
           'startSilent': false,
           'enableInsecureRoomNameWarning': false,
           'startAsModerator': true,
-          'prejoinConfig': {
-            'enabled': false,
-          },
+          'prejoinConfig': {'enabled': false},
         },
         featureFlags: {
           'pip.enabled': true,
@@ -136,9 +134,7 @@ class MeetingService {
           'startSilent': false,
           'enableInsecureRoomNameWarning': false,
           'startAsModerator': true,
-          'prejoinConfig': {
-            'enabled': false,
-          },
+          'prejoinConfig': {'enabled': false},
         },
         featureFlags: {
           'pip.enabled': true,
@@ -190,16 +186,18 @@ class MeetingService {
     try {
       debugPrint('Creating new meeting');
       final meetingId = generateMeetingId();
-      final meeting = Meeting()
-        ..meetingId = meetingId
-        ..title = title ?? 'New Meeting'
-        ..description = description
-        ..startTime = scheduledTime ?? DateTime.now()
-        ..createdAt = DateTime.now()
-        ..passwordProtected = isPasswordProtected
-        ..password = password
-        ..waitingRoomEnabled = false // Always disable waiting room
-        ..recordingEnabled = recordingEnabled;
+      final meeting =
+          Meeting()
+            ..meetingId = meetingId
+            ..title = title ?? 'New Meeting'
+            ..description = description
+            ..startTime = scheduledTime ?? DateTime.now()
+            ..createdAt = DateTime.now()
+            ..passwordProtected = isPasswordProtected
+            ..password = password
+            ..waitingRoomEnabled =
+                false // Always disable waiting room
+            ..recordingEnabled = recordingEnabled;
 
       final id = await DatabaseService.saveMeeting(meeting);
       meeting.id = id;
@@ -247,9 +245,7 @@ class MeetingService {
           'startSilent': false,
           'enableInsecureRoomNameWarning': false,
           'startAsModerator': true,
-          'prejoinConfig': {
-            'enabled': false,
-          },
+          'prejoinConfig': {'enabled': false},
         },
         featureFlags: {
           'pip.enabled': true,
@@ -290,14 +286,14 @@ class MeetingService {
     try {
       final meetingLink = 'https://meet.jit.si/${meeting.meetingId}';
       final shareText = '''
-Tham gia cuộc họp của tôi trên Near
+Tham gia cuộc họp của tôi trên Mobile-Seminar
 Tiêu đề: ${meeting.title}
 Thời gian: ${meeting.startTime.toString()}
 Link: $meetingLink
 ${meeting.passwordProtected ? 'Mật khẩu: ${meeting.password}' : ''}
 ''';
 
-      await Share.share(shareText, subject: 'Tham gia cuộc họp Near của tôi');
+      await Share.share(shareText, subject: 'Tham gia cuộc họp Mobile-Seminar của tôi');
     } catch (e) {
       debugPrint('Error sharing meeting: $e');
       throw Exception('Failed to share meeting: $e');
@@ -314,4 +310,3 @@ ${meeting.passwordProtected ? 'Mật khẩu: ${meeting.password}' : ''}
     }
   }
 }
-

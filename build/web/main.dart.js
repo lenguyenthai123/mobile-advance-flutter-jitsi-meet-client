@@ -91735,7 +91735,7 @@ k(a){return"Provider<"+this.a.k(0)+"> not found for "+this.b.k(0)},
 $ico:1}
 A.NG.prototype={
 J(a){var s=A.b([A.aDE(new A.ads(),t.d),A.aDE(new A.adt(),t.ti)],t.Ds),r=$.aKq(),q=$.aKp()
-return A.aRp(new A.AY(A.as(["/",new A.adu(),"/home",new A.adv(),"/onboarding",new A.adw(),"/login",new A.adx(),"/admin",new A.ady(),"/create-meeting",new A.adz(),"/join-meeting",new A.adA(),"/meeting-history",new A.adB(),"/profile",new A.adC()],t.N,t.Ab),"/","Near - Video Conferencing",r,q,B.B_,!1,null),s)}}
+return A.aRp(new A.AY(A.as(["/",new A.adu(),"/home",new A.adv(),"/onboarding",new A.adw(),"/login",new A.adx(),"/admin",new A.ady(),"/create-meeting",new A.adz(),"/join-meeting",new A.adA(),"/meeting-history",new A.adB(),"/profile",new A.adC()],t.N,t.Ab),"/","Mobile-Seminar - Video Conferencing",r,q,B.B_,!1,null),s)}}
 A.ads.prototype={
 $1(a){var s=A.b(["email",u.I],t.s)
 s=new A.Mp(s,new A.eH(null,null,t.io))
@@ -92251,9 +92251,9 @@ i.push(B.aO)
 i.push(A.cE(A.b([A.hP(e,e,B.HQ,e,e,new A.alw(f,a,r),e,e,e),A.hP(e,e,B.oJ,e,e,new A.alx(f),e,e,e),B.iA,A.LM(B.oN,B.Xz,new A.aly(f,q,r,a),e)],g),B.B,B.dV,B.w,e))
 return A.Kr(new A.aV(B.b3,A.cl(i,B.ah,B.v,B.w),e),e,B.o4,e)},
 a7B(){var s=null
-return A.dQ(A.cl(A.b([B.HN,B.aO,B.XZ,B.bt,B.Xy,B.ci,A.pz(!1,B.XE,s,s,s,s,s,s,new A.alK(this),s,s)],t.p),B.B,B.bj,B.w),s,s)},
+return A.dQ(A.cl(A.b([B.HN,B.aO,B.Y0,B.bt,B.Xy,B.ci,A.pz(!1,B.XE,s,s,s,s,s,s,new A.alK(this),s,s)],t.p),B.B,B.bj,B.w),s,s)},
 a7w(a){var s=this,r=null,q=a.e,p=t.p
-return A.a9F(A.b([A.Kr(new A.aV(B.b3,A.cl(A.b([B.X5,B.aO,A.a9D(!1,r,r,r,!0,r,r,!0,!1,B.oI,r,new A.alE(s),!1,r,r,r,A.b7(q==null?"Not set":q,r,r,r,r,r,r,r,r),r,B.XJ,B.oJ,r),B.jU,A.rp(new A.alF(s),B.Xd,B.X2,!0),A.rp(new A.alG(s),B.Xs,B.X9,!0)],p),B.ah,B.v,B.w),r),r,r,r),B.aO,A.Kr(new A.aV(B.b3,A.cl(A.b([B.XF,B.aO,A.rp(new A.alH(s),B.Xl,B.Xo,!1),A.rp(new A.alI(s),B.Xn,B.XG,!1)],p),B.ah,B.v,B.w),r),r,r,r),B.ci,A.pz(!1,B.ec,r,r,r,r,r,r,new A.alJ(s,a),r,A.ua(r,r,B.fd,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r))],p),B.b3)}}
+return A.a9F(A.b([A.Kr(new A.aV(B.b3,A.cl(A.b([B.X5,B.aO,A.a9D(!1,r,r,r,!0,r,r,!0,!1,B.oI,r,new A.alE(s),!1,r,r,r,A.b7(q==null?"Not set":q,r,r,r,r,r,r,r,r),r,B.XJ,B.oJ,r),B.jU,A.rp(new A.alF(s),B.Xe,B.X2,!0),A.rp(new A.alG(s),B.Xs,B.X9,!0)],p),B.ah,B.v,B.w),r),r,r,r),B.aO,A.Kr(new A.aV(B.b3,A.cl(A.b([B.XF,B.aO,A.rp(new A.alH(s),B.Xm,B.Xp,!1),A.rp(new A.alI(s),B.Xo,B.XG,!1)],p),B.ah,B.v,B.w),r),r,r,r),B.ci,A.pz(!1,B.ec,r,r,r,r,r,r,new A.alJ(s,a),r,A.ua(r,r,B.fd,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r,r))],p),B.b3)}}
 A.alL.prototype={
 $0(){this.a.e=!0},
 $S:0}
@@ -92533,21 +92533,21 @@ break
 case 6:case 1:return A.D(q,r)
 case 2:return A.C(o.at(-1),r)}})
 return A.E($async$zi,r)},
-J(a){var s,r,q,p,o=this,n=null,m=A.K(a),l=A.di(a,!0,t.d),k=A.tr(n,n,B.XU),j=A.of(!1,o.e,B.In,!1,n,n,n,1,n,n,n,n,n,n,B.a7,n,new A.anL()),i=A.of(!1,o.f,B.Im,!1,n,n,n,3,n,n,n,n,n,n,B.a7,n,n),h=m.p1.w
+J(a){var s,r,q,p,o=this,n=null,m=A.K(a),l=A.di(a,!0,t.d),k=A.tr(n,n,B.XV),j=A.of(!1,o.e,B.In,!1,n,n,n,1,n,n,n,n,n,n,B.a7,n,new A.anL()),i=A.of(!1,o.f,B.Im,!1,n,n,n,3,n,n,n,n,n,n,B.a7,n,n),h=m.p1.w
 h=A.b7("L\u1ecbch tr\xecnh",n,n,n,n,h==null?n:h.IS(B.av),n,n,n)
 s=A.a9D(!1,n,n,n,!0,n,n,!0,!1,B.oM,n,new A.anM(o,a),!1,n,n,n,A.b7(A.a3r("EEEE, dd/MM/yyyy").oJ(o.r),n,n,n,n,n,n,n,n),n,B.XB,n,n)
 r=o.w
 q=A.bK(a,B.K,t.v)
 q.toString
 A.ae(a,B.bS,t.w).toString
-r=A.a9D(!1,n,n,n,!0,n,n,!0,!1,B.oK,n,new A.anN(o,a),!1,n,n,n,A.b7(q.XO(r,!1),n,n,n,n,n,n,n,n),n,B.Y_,n,n)
+r=A.a9D(!1,n,n,n,!0,n,n,!0,!1,B.oK,n,new A.anN(o,a),!1,n,n,n,A.b7(q.XO(r,!1),n,n,n,n,n,n,n,n),n,B.Y1,n,n)
 q=o.x
 p=q||o.y?n:o.ga8P()
 j=A.b([j,B.aO,i,B.ci,h,B.bt,s,r,B.cj,A.pz(!1,q?B.Pb:B.XH,n,n,n,n,n,n,p,n,n),B.aO],t.p)
 if(l.w.a.z!=null){i=o.x||o.y?n:o.ga8L()
 h=o.y
 s=h?B.iB:A.aAr("assets/images/google_logo.png",new A.anO(),24,24)
-h=h?B.XY:B.Xu
+h=h?B.XZ:B.Xu
 j.push(A.LM(s,h,i,A.ua(n,n,m.ax.y,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)))}return A.nY(k,A.A3(n,A.a9F(j,B.b3),o.d),n)}}
 A.anJ.prototype={
 $0(){this.a.r=this.b},
@@ -92576,7 +92576,7 @@ q=n.e
 q===$&&A.a()
 p=t.p
 q=A.cl(A.b([m,B.bt,s,B.bt,A.b7("Th\u1eddi gian: "+r.oJ(q),o,o,o,o,o,o,o,o)],p),B.ah,B.v,B.aL)
-return A.JD(A.b([A.fi(B.X8,new A.anE(a),o),A.pz(!1,B.Xk,o,o,o,o,o,o,new A.anF(this.a,a,n),o,o)],p),q,B.XV)},
+return A.JD(A.b([A.fi(B.X8,new A.anE(a),o),A.pz(!1,B.Xl,o,o,o,o,o,o,new A.anF(this.a,a,n),o,o)],p),q,B.XW)},
 $S:68}
 A.anE.prototype={
 $0(){A.cu(this.a,!1).fl(null)},
@@ -92620,7 +92620,7 @@ return A.E($async$uk,r)},
 J(a){var s,r,q,p,o,n=this,m=null,l="Qu\u1ea3n tr\u1ecb",k=A.di(a,!0,t.d),j=A.di(a,!0,t.ti),i=A.K(a),h=t.p,g=A.b([],h)
 if(k.r)g.push(A.hP(m,m,B.HM,m,m,new A.aqg(a),m,m,l))
 g.push(A.hP(m,m,B.hH,m,m,new A.aqh(a),m,m,m))
-g=A.tr(g,m,B.Xr)
+g=A.tr(g,m,B.Y_)
 s=k.b
 s=A.b([A.dg(A.b7("Xin ch\xe0o, "+(s==null?"Kh\xe1ch":s),m,m,m,m,B.ly,m,m,m),1)],h)
 if(k.r){r=A.K(a).ax.b.aF(0.1)
@@ -92633,7 +92633,7 @@ p=A.f1(12)
 o=r.aF(0.3)
 s.push(A.Kr(new A.aV(B.b3,A.cl(A.b([A.cE(A.b([A.ls(B.kj,r,m,24),B.iA,A.b7("Quy\u1ec1n qu\u1ea3n tr\u1ecb",m,m,m,m,A.fj(m,m,r,m,m,m,m,m,m,m,m,18,m,m,B.av,m,m,!0,m,m,m,m,m,m,m,m),m,m,m)],h),B.B,B.v,B.w,m),B.bt,B.X4,B.aO,A.cE(A.b([A.dg(A.LM(B.HR,B.AZ,new A.aqi(a),A.ua(m,m,r,m,m,m,m,m,m,B.k,m,m,m,m,m,m,m,m,m,m)),1)],h),B.B,B.v,B.w,m)],h),B.ah,B.v,B.w),m),q,B.Gi,new A.d1(p,new A.b_(o,1,B.y,-1))))}s.push(A.cE(A.b([A.dg(n.Ol(a,B.oE,"T\u1ea1o cu\u1ed9c h\u1ecdp",new A.aqj(a)),1),B.Rr,A.dg(n.Ol(a,B.Hk,"Tham gia",new A.aqk(a)),1)],h),B.B,B.v,B.w,m))
 s.push(B.cj)
-s.push(A.cE(A.b([B.XS,A.fi(B.XK,new A.aql(a),m)],h),B.B,B.hY,B.w,m))
+s.push(A.cE(A.b([B.XT,A.fi(B.XK,new A.aql(a),m)],h),B.B,B.hY,B.w,m))
 s.push(B.bt)
 if(j.d)s.push(B.jl)
 else if(J.fu(j.b))s.push(B.DJ)
@@ -92816,9 +92816,9 @@ J(a){var s,r,q,p,o,n,m=this,l=null
 A.K(a)
 s=A.di(a,!0,t.d)
 r=A.tr(l,l,B.XC)
-q=A.b([A.of(!1,m.e,A.a8T(l,l,l,l,l,l,l,l,!0,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,"Nh\u1eadp ID cu\u1ed9c h\u1ecdp",l,l,l,l,l,l,l,l,"ID cu\u1ed9c h\u1ecdp",!0,l,B.HP,l,l,l,l,l,l,A.hP(l,l,B.HT,l,l,new A.are(m),l,l,"D\xe1n t\u1eeb clipboard"),l,l,l,l),!1,l,l,l,1,l,l,l,l,l,l,B.a7,l,new A.arf()),B.aO,A.of(!1,m.f,B.Ii,!1,l,l,l,1,l,l,l,l,l,l,B.a7,l,new A.arg()),B.ci,B.XX,B.bt,A.rp(new A.arh(m),B.AX,B.X1,m.r),A.rp(new A.ari(m),B.AX,B.XL,m.w)],t.p)
+q=A.b([A.of(!1,m.e,A.a8T(l,l,l,l,l,l,l,l,!0,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,l,"Nh\u1eadp ID cu\u1ed9c h\u1ecdp",l,l,l,l,l,l,l,l,"ID cu\u1ed9c h\u1ecdp",!0,l,B.HP,l,l,l,l,l,l,A.hP(l,l,B.HT,l,l,new A.are(m),l,l,"D\xe1n t\u1eeb clipboard"),l,l,l,l),!1,l,l,l,1,l,l,l,l,l,l,B.a7,l,new A.arf()),B.aO,A.of(!1,m.f,B.Ii,!1,l,l,l,1,l,l,l,l,l,l,B.a7,l,new A.arg()),B.ci,B.XY,B.bt,A.rp(new A.arh(m),B.AX,B.X1,m.r),A.rp(new A.ari(m),B.AX,B.XL,m.w)],t.p)
 p=s.w.a
-if(p.z!=null)q.push(A.rp(new A.arj(m),B.X_,B.XP,m.z))
+if(p.z!=null)q.push(A.rp(new A.arj(m),B.X_,B.XQ,m.z))
 q.push(B.cj)
 o=m.x
 n=o?l:m.gafO()
@@ -92958,7 +92958,7 @@ j=A.of(!1,p.e,B.Il,!1,o,o,o,1,o,o,o,o,o,o,B.a7,B.lu,new A.arI())
 s=p.f
 r=s?o:p.gag3()
 q=s?B.Rs:A.aAr("assets/images/google_logo.png",new A.arJ(),24,24)
-s=s?B.XR:B.AZ
+s=s?B.XS:B.AZ
 return A.nY(m,A.vm(!0,A.dQ(A.aiG(A.A3(o,A.cl(A.b([k,B.aO,i,B.bt,l,B.cj,j,B.cj,A.LM(q,s,r,A.ua(o,o,B.k,o,o,o,o,o,o,B.V,o,o,B.Gk,o,o,B.Cg,o,o,o,o)),B.ci,A.aFX(B.Xb,p.ga8B())],t.p),B.bC,B.bj,B.w),p.d),o,B.Y,B.o6,o,o,B.ax),o,o),B.aa,!0),o)}}
 A.arE.prototype={
 $0(){},
@@ -92993,7 +92993,7 @@ s=2
 return A.u(A.di(p,!1,t.ti).rw(),$async$ul)
 case 2:return A.D(null,r)}})
 return A.E($async$ul,r)},
-J(a){var s,r=null,q=A.di(a,!0,t.ti),p=A.di(a,!0,t.d),o=A.tr(r,r,B.XT)
+J(a){var s,r=null,q=A.di(a,!0,t.ti),p=A.di(a,!0,t.d),o=A.tr(r,r,B.XU)
 if(q.d)s=B.jl
 else s=J.fu(q.b)?B.DI:A.aAy(new A.asc(q,p),J.c1(q.b),B.b3,r,!1)
 return A.nY(o,A.aAV(s,this.gag0()),A.aEJ(r,B.oL,r,r,!1,new A.asd(a)))}}
@@ -93070,7 +93070,7 @@ if(n==null){s=1
 break}A.cu(n,!1).CV(A.km(new A.asw(),null,t.z))
 case 1:return A.D(q,r)}})
 return A.E($async$pX,r)},
-J(a){var s,r,q=this,p=null,o=A.fi(B.Xw,new A.asy(q),p),n=t.p,m=A.dg(A.aG2(A.b([q.Oo("The easiest way to connect with people through video conferencing.",B.oF,"Welcome to Near"),q.Oo("Start your own meeting or join existing ones with a simple meeting code.",B.HF,"Create or Join Meetings"),q.a7s()],n),B.z,q.d,B.Y,new A.asz(q),p),1),l=J.MO(3,t.l7)
+J(a){var s,r,q=this,p=null,o=A.fi(B.Xw,new A.asy(q),p),n=t.p,m=A.dg(A.aG2(A.b([q.Oo("The easiest way to connect with people through video conferencing.",B.oF,"Welcome to Mobile-Seminar"),q.Oo("Start your own meeting or join existing ones with a simple meeting code.",B.HF,"Create or Join Meetings"),q.a7s()],n),B.z,q.d,B.Y,new A.asz(q),p),1),l=J.MO(3,t.l7)
 for(s=0;s<3;++s)l[s]=A.ii(p,p,B.F,p,new A.dm(s===q.f?A.K(a).ax.b:A.ap(B.d.az(127.5),B.bG.v()>>>16&255,B.bG.v()>>>8&255,B.bG.v()&255),p,p,p,p,p,B.cP),p,8,B.k_,p,p,p,8)
 r=A.cE(l,B.B,B.bj,B.w,p)
 return A.nY(p,A.vm(!0,A.cl(A.b([new A.ec(B.BT,p,p,o,p),m,r,B.aO,new A.aV(B.b3,A.cU(A.pz(!1,A.b7(q.f<2?"Next":"Get Started",p,p,p,p,p,p,p,p),p,p,p,p,p,p,q.gagE(),p,p),p,1/0),p)],n),B.B,B.v,B.w),B.aa,!0),p)},
@@ -93078,7 +93078,7 @@ Oo(a,b,c){var s=null,r=this.c
 r.toString
 return new A.aV(B.hi,A.cl(A.b([A.ls(b,A.K(r).ax.b,s,120),B.cj,A.b7(c,s,s,s,s,B.ly,B.bm,s,s),B.aO,A.b7(a,s,s,s,s,B.lx,B.bm,s,s)],t.p),B.B,B.bj,B.w),s)},
 a7s(){var s=null
-return new A.aV(B.hi,A.cl(A.b([B.Xf,B.aO,B.Y1,B.cj,A.aH7(!0,B.dU,!1,s,!0,B.z,s,A.b_6(),this.e,s,s,s,s,s,2,B.Ij,B.Y,!0,s,!0,s,!1,s,B.eh,s,s,s,s,s,s,s,1,s,s,!1,"\u2022",s,s,s,new A.asv(this),s,!1,s,s,!1,s,!0,s,B.o5,s,s,B.dB,B.cQ,s,s,s,s,s,s,s,!0,B.a7,s,B.Sm,s,B.iD,s,s)],t.p),B.B,B.bj,B.w),s)}}
+return new A.aV(B.hi,A.cl(A.b([B.Xg,B.aO,B.Xc,B.cj,A.aH7(!0,B.dU,!1,s,!0,B.z,s,A.b_6(),this.e,s,s,s,s,s,2,B.Ij,B.Y,!0,s,!0,s,!1,s,B.eh,s,s,s,s,s,s,s,1,s,s,!1,"\u2022",s,s,s,new A.asv(this),s,!1,s,s,!1,s,!0,s,B.o5,s,s,B.dB,B.cQ,s,s,s,s,s,s,s,!0,B.a7,s,B.Sm,s,B.iD,s,s)],t.p),B.B,B.bj,B.w),s)}}
 A.asw.prototype={
 $1(a){return B.hG},
 $S:85}
@@ -93177,7 +93177,7 @@ k=A.of(!1,k,B.Io,!1,n,n,n,1,n,n,n,n,n,n,B.a7,n,new A.ata())
 s=o.f
 s===$&&A.a()
 s=A.of(!1,s,B.Ik,!1,n,n,B.SG,1,n,n,n,n,n,n,B.a7,n,new A.atb())
-r=A.rp(new A.atc(o),B.Xm,B.Xx,o.r)
+r=A.rp(new A.atc(o),B.Xn,B.Xx,o.r)
 q=o.w
 p=q?n:o.gajk()
 return A.nY(l,A.A3(n,A.a9F(A.b([j,B.ci,k,B.aO,s,B.ci,B.X7,B.bt,r,B.cj,A.pz(!1,q?B.Pd:B.WY,n,n,n,n,n,n,p,n,n),B.aO,A.aFX(B.ec,new A.atd(o,a))],t.p),B.b3),o.d),n)}}
@@ -93258,7 +93258,7 @@ else A.cu(n,!1).CV(A.km(new A.auP(),null,m))
 case 1:return A.D(q,r)}})
 return A.E($async$u8,r)},
 J(a){var s=null
-return A.nY(s,A.dQ(A.cl(A.b([A.aAr("assets/images/logo.png",new A.auQ(),120,120),B.ci,B.Y0,B.bt,B.XA,B.cj,B.mZ],t.p),B.B,B.bj,B.w),s,s),s)}}
+return A.nY(s,A.dQ(A.cl(A.b([A.aAr("assets/images/logo.png",new A.auQ(),120,120),B.ci,B.XN,B.bt,B.XA,B.cj,B.mZ],t.p),B.B,B.bj,B.w),s,s),s)}}
 A.auO.prototype={
 $1(a){return B.vx},
 $S:209}
@@ -93464,9 +93464,9 @@ k=a.e
 k===$&&A.a()
 k=k.k(0)
 j=A.l(o)
-n="Tham gia cu\u1ed9c h\u1ecdp c\u1ee7a t\xf4i tr\xean Near\nTi\xeau \u0111\u1ec1: "+l+"\nTh\u1eddi gian: "+k+"\nLink: "+j+"\n\n"
+n="Tham gia cu\u1ed9c h\u1ecdp c\u1ee7a t\xf4i tr\xean Mobile-Seminar\nTi\xeau \u0111\u1ec1: "+l+"\nTh\u1eddi gian: "+k+"\nLink: "+j+"\n\n"
 s=6
-return A.u($.aLy().py(0,n,null,"Tham gia cu\u1ed9c h\u1ecdp Near c\u1ee7a t\xf4i"),$async$kj)
+return A.u($.aLy().py(0,n,null,"Tham gia cu\u1ed9c h\u1ecdp Mobile-Seminar c\u1ee7a t\xf4i"),$async$kj)
 case 6:q=1
 s=5
 break
@@ -93516,7 +93516,7 @@ i=m.f
 if(i!=null)n.push(A.hP(l,l,B.HO,l,l,i,l,l,"Delete"))
 n.push(A.hP(l,l,B.HV,l,l,m.e,l,l,"Share"))
 n.push(B.iA)
-n.push(A.LM(B.oN,B.XW,m.d,l))
+n.push(A.LM(B.oN,B.XX,m.d,l))
 p.push(A.cE(n,B.B,B.dV,B.w,l))
 return A.Kr(new A.aV(B.b3,A.cl(p,B.ah,B.v,B.w),l),l,B.o4,l)}}
 A.aip.prototype={
@@ -97847,8 +97847,8 @@ B.DF=new A.tz(B.k,B.nq,B.Aq,null)
 B.ny=new A.v(1,0.11764705882352941,0.11764705882352941,0.11764705882352941,B.e)
 B.Er=new A.v(0.45098039215686275,0,0,0,B.e)
 B.DG=new A.tz(B.ny,B.Er,B.Aq,null)
-B.Xh=new A.aG("No meetings found",null,null,null,null,null,null,null,null,null,null)
-B.DH=new A.h1(B.T,null,null,B.Xh,null)
+B.Xi=new A.aG("No meetings found",null,null,null,null,null,null,null,null,null,null)
+B.DH=new A.h1(B.T,null,null,B.Xi,null)
 B.hi=new A.al(32,32,32,32)
 B.lA=new A.p(!0,B.bG,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.bm=new A.m4(2,"center")
@@ -99800,11 +99800,11 @@ B.bg=new A.al1(1,"down")
 B.DM=new A.j3(2,null,null,null,null,B.k,null,null,null,null)
 B.iB=new A.dI(20,20,B.DM,null)
 B.iz=new A.dI(12,null,null,null)
-B.Xj=new A.aG("\u0110ang t\u1ea1o cu\u1ed9c h\u1ecdp...",null,null,null,null,null,null,null,null,null,null)
-B.KH=A.b(s([B.iB,B.iz,B.Xj]),t.p)
+B.Xk=new A.aG("\u0110ang t\u1ea1o cu\u1ed9c h\u1ecdp...",null,null,null,null,null,null,null,null,null,null)
+B.KH=A.b(s([B.iB,B.iz,B.Xk]),t.p)
 B.Pb=new A.r6(B.aI,B.bj,B.w,B.B,null,B.bg,null,0,B.KH,null)
-B.Xp=new A.aG("\u0110ang tham gia...",null,null,null,null,null,null,null,null,null,null)
-B.JO=A.b(s([B.iB,B.iz,B.Xp]),t.p)
+B.Xq=new A.aG("\u0110ang tham gia...",null,null,null,null,null,null,null,null,null,null)
+B.JO=A.b(s([B.iB,B.iz,B.Xq]),t.p)
 B.Pc=new A.r6(B.aI,B.bj,B.w,B.B,null,B.bg,null,0,B.JO,null)
 B.Xv=new A.aG("Saving...",null,null,null,null,null,null,null,null,null,null)
 B.JD=A.b(s([B.iB,B.iz,B.Xv]),t.p)
@@ -100064,30 +100064,30 @@ B.RA=new A.kE(3,"hide")
 B.a0L=new A.kE(4,"remove")
 B.Au=new A.kE(5,"timeout")
 B.RB=new A.vD(null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Xi=new A.aG("Recording settings feature coming soon",null,null,null,null,null,null,null,null,null,null)
-B.RC=new A.es(B.Xi,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
-B.XQ=new A.aG("Profile updated successfully",null,null,null,null,null,null,null,null,null,null)
-B.RD=new A.es(B.XQ,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
+B.Xj=new A.aG("Recording settings feature coming soon",null,null,null,null,null,null,null,null,null,null)
+B.RC=new A.es(B.Xj,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
+B.XR=new A.aG("Profile updated successfully",null,null,null,null,null,null,null,null,null,null)
+B.RD=new A.es(B.XR,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
 B.XD=new A.aG("B\u1ea1n c\u1ea7n \u0111\u0103ng nh\u1eadp v\u1edbi Google \u0111\u1ec3 tham gia v\u1edbi quy\u1ec1n qu\u1ea3n tr\u1ecb",null,null,null,null,null,null,null,null,null,null)
 B.RE=new A.es(B.XD,B.fd,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
-B.Xg=new A.aG("\u0110\u0103ng nh\u1eadp th\xe0nh c\xf4ng! B\u1ea1n \u0111\xe3 c\xf3 quy\u1ec1n qu\u1ea3n tr\u1ecb.",null,null,null,null,null,null,null,null,null,null)
-B.RF=new A.es(B.Xg,B.i0,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
+B.Xh=new A.aG("\u0110\u0103ng nh\u1eadp th\xe0nh c\xf4ng! B\u1ea1n \u0111\xe3 c\xf3 quy\u1ec1n qu\u1ea3n tr\u1ecb.",null,null,null,null,null,null,null,null,null,null)
+B.RF=new A.es(B.Xh,B.i0,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
 B.X3=new A.aG("User management feature coming soon",null,null,null,null,null,null,null,null,null,null)
 B.RG=new A.es(B.X3,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
 B.XM=new A.aG("Vui l\xf2ng nh\u1eadp t\xean mi\u1ec1n Jitsi",null,null,null,null,null,null,null,null,null,null)
 B.RH=new A.es(B.XM,B.fd,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
-B.Xq=new A.aG("Please enter your name",null,null,null,null,null,null,null,null,null,null)
-B.RI=new A.es(B.Xq,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
-B.XN=new A.aG("Password settings feature coming soon",null,null,null,null,null,null,null,null,null,null)
-B.RJ=new A.es(B.XN,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
-B.Xc=new A.aG("Edit meeting feature coming soon",null,null,null,null,null,null,null,null,null,null)
-B.RK=new A.es(B.Xc,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
-B.XO=new A.aG("Domain editing feature coming soon",null,null,null,null,null,null,null,null,null,null)
-B.RL=new A.es(B.XO,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
+B.Xr=new A.aG("Please enter your name",null,null,null,null,null,null,null,null,null,null)
+B.RI=new A.es(B.Xr,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
+B.XO=new A.aG("Password settings feature coming soon",null,null,null,null,null,null,null,null,null,null)
+B.RJ=new A.es(B.XO,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
+B.Xd=new A.aG("Edit meeting feature coming soon",null,null,null,null,null,null,null,null,null,null)
+B.RK=new A.es(B.Xd,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
+B.XP=new A.aG("Domain editing feature coming soon",null,null,null,null,null,null,null,null,null,null)
+B.RL=new A.es(B.XP,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
 B.X6=new A.aG("Authentication settings feature coming soon",null,null,null,null,null,null,null,null,null,null)
 B.RM=new A.es(B.X6,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
-B.Xe=new A.aG("Waiting room settings feature coming soon",null,null,null,null,null,null,null,null,null,null)
-B.RN=new A.es(B.Xe,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
+B.Xf=new A.aG("Waiting room settings feature coming soon",null,null,null,null,null,null,null,null,null,null)
+B.RN=new A.es(B.Xf,null,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
 B.Xt=new A.aG("\u0110\u0103ng nh\u1eadp th\u1ea5t b\u1ea1i ho\u1eb7c b\u1ecb h\u1ee7y. Vui l\xf2ng th\u1eed l\u1ea1i.",null,null,null,null,null,null,null,null,null,null)
 B.RO=new A.es(B.Xt,B.fd,null,null,null,null,null,null,null,null,null,null,null,B.au,null,null,null,B.z,null)
 B.Av=new A.D_(0,"permissive")
@@ -100472,16 +100472,16 @@ B.X8=new A.aG("\u0110\xf3ng",null,null,null,null,null,null,null,null,null,null)
 B.X9=new A.aG("Enable Waiting Room",null,null,null,null,null,null,null,null,null,null)
 B.Xa=new A.aG("Profile",null,null,null,null,null,null,null,null,null,null)
 B.Xb=new A.aG("H\u1ee7y",null,null,null,null,null,null,null,null,null,null)
-B.Xd=new A.aG("Allow meeting recordings",null,null,null,null,null,null,null,null,null,null)
+B.Xc=new A.aG("Enter your name to get started with Mobile-Seminar.",null,B.lx,B.bm,null,null,null,null,null,null,null)
+B.Xe=new A.aG("Allow meeting recordings",null,null,null,null,null,null,null,null,null,null)
 B.ec=new A.aG("Sign Out",null,null,null,null,null,null,null,null,null,null)
-B.Xf=new A.aG("What should we call you?",null,B.ly,B.bm,null,null,null,null,null,null,null)
+B.Xg=new A.aG("What should we call you?",null,B.ly,B.bm,null,null,null,null,null,null,null)
 B.AX=new A.aG("B\u1ea1n c\xf3 th\u1ec3 b\u1eadt l\u1ea1i sau khi tham gia",null,null,null,null,null,null,null,null,null,null)
-B.Xk=new A.aG("Tham gia ngay",null,null,null,null,null,null,null,null,null,null)
-B.Xl=new A.aG("Automatically generate passwords for new meetings",null,null,null,null,null,null,null,null,null,null)
-B.Xm=new A.aG("Enable dark theme",null,null,null,null,null,null,null,null,null,null)
-B.Xn=new A.aG("Require users to sign in before joining meetings",null,null,null,null,null,null,null,null,null,null)
-B.Xo=new A.aG("Require Password for All Meetings",null,null,null,null,null,null,null,null,null,null)
-B.Xr=new A.aG("Near",null,null,null,null,null,null,null,null,null,null)
+B.Xl=new A.aG("Tham gia ngay",null,null,null,null,null,null,null,null,null,null)
+B.Xm=new A.aG("Automatically generate passwords for new meetings",null,null,null,null,null,null,null,null,null,null)
+B.Xn=new A.aG("Enable dark theme",null,null,null,null,null,null,null,null,null,null)
+B.Xo=new A.aG("Require users to sign in before joining meetings",null,null,null,null,null,null,null,null,null,null)
+B.Xp=new A.aG("Require Password for All Meetings",null,null,null,null,null,null,null,null,null,null)
 B.Xs=new A.aG("Participants must be admitted by a moderator",null,null,null,null,null,null,null,null,null,null)
 B.Xu=new A.aG("T\u1ea1o & tham gia v\u1edbi Google",null,null,null,null,null,null,null,null,null,null)
 B.Xw=new A.aG("Skip",null,null,null,null,null,null,null,null,null,null)
@@ -100500,22 +100500,22 @@ B.AY=new A.aG("Delete Meeting",null,null,null,null,null,null,null,null,null,null
 B.XJ=new A.aG("Jitsi Domain",null,null,null,null,null,null,null,null,null,null)
 B.XK=new A.aG("Xem t\u1ea5t c\u1ea3",null,null,null,null,null,null,null,null,null,null)
 B.XL=new A.aG("T\u1eaft video khi tham gia",null,null,null,null,null,null,null,null,null,null)
-B.XP=new A.aG("Tham gia v\u1edbi quy\u1ec1n qu\u1ea3n tr\u1ecb",null,null,null,null,null,null,null,null,null,null)
-B.XR=new A.aG("\u0110ang \u0111\u0103ng nh\u1eadp...",null,null,null,null,null,null,null,null,null,null)
-B.XS=new A.aG("Cu\u1ed9c h\u1ecdp s\u1eafp t\u1edbi",null,B.iG,null,null,null,null,null,null,null,null)
-B.XT=new A.aG("Meeting History",null,null,null,null,null,null,null,null,null,null)
-B.XU=new A.aG("T\u1ea1o cu\u1ed9c h\u1ecdp m\u1edbi",null,null,null,null,null,null,null,null,null,null)
-B.XV=new A.aG("Cu\u1ed9c h\u1ecdp \u0111\xe3 \u0111\u01b0\u1ee3c t\u1ea1o",null,null,null,null,null,null,null,null,null,null)
-B.XW=new A.aG("Join",null,null,null,null,null,null,null,null,null,null)
-B.XX=new A.aG("T\xf9y ch\u1ecdn cu\u1ed9c h\u1ecdp",null,B.AU,null,null,null,null,null,null,null,null)
-B.XY=new A.aG("\u0110ang k\u1ebft n\u1ed1i v\u1edbi Google...",null,null,null,null,null,null,null,null,null,null)
+B.UU=new A.p(!0,null,null,null,null,null,32,B.av,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.XN=new A.aG("Mobile-Seminar",null,B.UU,null,null,null,null,null,null,null,null)
+B.XQ=new A.aG("Tham gia v\u1edbi quy\u1ec1n qu\u1ea3n tr\u1ecb",null,null,null,null,null,null,null,null,null,null)
+B.XS=new A.aG("\u0110ang \u0111\u0103ng nh\u1eadp...",null,null,null,null,null,null,null,null,null,null)
+B.XT=new A.aG("Cu\u1ed9c h\u1ecdp s\u1eafp t\u1edbi",null,B.iG,null,null,null,null,null,null,null,null)
+B.XU=new A.aG("Meeting History",null,null,null,null,null,null,null,null,null,null)
+B.XV=new A.aG("T\u1ea1o cu\u1ed9c h\u1ecdp m\u1edbi",null,null,null,null,null,null,null,null,null,null)
+B.XW=new A.aG("Cu\u1ed9c h\u1ecdp \u0111\xe3 \u0111\u01b0\u1ee3c t\u1ea1o",null,null,null,null,null,null,null,null,null,null)
+B.XX=new A.aG("Join",null,null,null,null,null,null,null,null,null,null)
+B.XY=new A.aG("T\xf9y ch\u1ecdn cu\u1ed9c h\u1ecdp",null,B.AU,null,null,null,null,null,null,null,null)
+B.XZ=new A.aG("\u0110ang k\u1ebft n\u1ed1i v\u1edbi Google...",null,null,null,null,null,null,null,null,null,null)
+B.Y_=new A.aG("Mobile-Seminar",null,null,null,null,null,null,null,null,null,null)
 B.AZ=new A.aG("\u0110\u0103ng nh\u1eadp v\u1edbi Google",null,null,null,null,null,null,null,null,null,null)
 B.W8=new A.p(!0,null,null,null,null,null,20,B.av,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.XZ=new A.aG("User Management",null,B.W8,null,null,null,null,null,null,null,null)
-B.Y_=new A.aG("Gi\u1edd",null,null,null,null,null,null,null,null,null,null)
-B.UU=new A.p(!0,null,null,null,null,null,32,B.av,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.Y0=new A.aG("Near",null,B.UU,null,null,null,null,null,null,null,null)
-B.Y1=new A.aG("Enter your name to get started with Near.",null,B.lx,B.bm,null,null,null,null,null,null,null)
+B.Y0=new A.aG("User Management",null,B.W8,null,null,null,null,null,null,null,null)
+B.Y1=new A.aG("Gi\u1edd",null,null,null,null,null,null,null,null,null,null)
 B.B_=new A.R_(0,"system")
 B.Y2=new A.R_(2,"dark")
 B.Ny=new A.j(0.056,0.024)

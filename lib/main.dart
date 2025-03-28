@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => MeetingProvider()),
       ],
       child: MaterialApp(
-        title: 'Near - Video Conferencing',
+        title: 'Mobile-Seminar - Video Conferencing',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,

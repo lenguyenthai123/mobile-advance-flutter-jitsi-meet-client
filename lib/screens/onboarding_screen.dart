@@ -90,7 +90,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 },
                 children: [
                   _buildFeaturePage(
-                    title: 'Welcome to Near',
+                    title: 'Welcome to Mobile-Seminar',
                     description: 'The easiest way to connect with people through video conferencing.',
                     icon: Icons.video_call_rounded,
                   ),
@@ -195,7 +195,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ),
           const SizedBox(height: 16),
           const Text(
-            'Enter your name to get started with Near.',
+            'Enter your name to get started with Mobile-Seminar.',
             style: TextStyle(
               fontSize: 16,
               color: Colors.grey,
